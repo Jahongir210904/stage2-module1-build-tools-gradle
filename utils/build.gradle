@@ -35,8 +35,8 @@ publishing {
 //add Apache Apache Commons Lang 3.10 (or higher) dependency
 jar {
     manifest {
-        attributes("Implementation-Title": project.name,
-            "Implementation-Version": version)
+        attributes("Implementation-Title": "utils",
+            "Implementation-Version": "1.0.0")
         //provide manifest with such attributes as 'Implementation-Title', 'Implementation-Version'
     }
 }
