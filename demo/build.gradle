@@ -24,8 +24,8 @@ repositories {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'your-group'
-            artifactId = 'your-artifact'
+            groupId = 'com.epam'
+            artifactId = 'demo'
             version = "0.0.1"
             from components.java
         }
