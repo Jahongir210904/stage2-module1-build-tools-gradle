@@ -37,7 +37,7 @@ jar {
     manifest {
         attributes("Implementation-Title": project.name,
                 "Implementation-Version": version,
-                "Main-Class": "stage2-module1-build-tools-gradle.utils.Main")
+                "Main-Class": "stage2-module1-build-tools-gradle.demo.Main")
 
         //provide manifest with such attributes as 'Implementation-Title', 'Implementation-Version'
     }
