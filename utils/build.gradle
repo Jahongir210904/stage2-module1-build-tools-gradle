@@ -1,36 +1,51 @@
 plugins {
+    id 'application'
+    id 'org.gradle.java'
+    id 'org.gradle.maven-publish'
     // id for library
     // id for maven to publish jar to local repository
 }
 
 java {
+//    toolchain {
+//        languageVersion = JavaLanguageVersion.of(17)
+//    }
+    withJavadocJar()
+    withSourcesJar()
 // provide sourceCompatibility
 }
 
 repositories {
+    mavenLocal()
+    mavenCentral()
 // provide repository, where required dependencies are located
 }
 
 publishing {
     publications {
         maven(MavenPublication) {
-// provide groupId
-// provide artifactId
-// provide version
-
+            groupId = 'your-group'
+            artifactId = 'your-artifact'
+            version = "0.0.1"
             from components.java
         }
     }
 }
 
 //add Apache Apache Commons Lang 3.10 (or higher) dependency
-
 jar {
     manifest {
+        attributes("Implementation-Title": project.name,
+            "Implementation-Version": version,
+            "Main-Class": "stage2-module1-build-tools-gradle.utils.Main")
+
         //provide manifest with such attributes as 'Implementation-Title', 'Implementation-Version'
     }
 }
-
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
 test {
     useJUnitPlatform()
 }
